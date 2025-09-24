@@ -1,0 +1,18 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: @artifactId@
+  datasource:
+    url: jdbc:postgresql://localhost:5433/examples?currentSchema=examples_spring_hibernate
+    username: postgres
+    password: 190695
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    schemas: examples_spring_hibernate
