@@ -1,6 +1,7 @@
 package ru.katesh.examples.spring.data.jpa.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,5 +43,18 @@ public class FindAllUserController {
     @GetMapping("/pageable")
     public List<User> findAllWithPageable(@RequestParam Integer pageNumber, @RequestParam Integer pageSize) {
         return userRepository.findAll(PageRequest.of(pageNumber, pageSize)).getContent();
+    }
+
+    /**
+     * Демонстрация работы метода findAll с поиском по примеру. В качестве примера используется обёртка вокруг «примера
+     * объекта», где не-null поля используются как условия фильтрации
+     */
+    @GetMapping("/example")
+    public List<User> findAllWithExample(@RequestParam String name, @RequestParam String middleName) {
+        User user = new User();
+        user.setUserName(name);
+        user.setUserMiddleName(middleName);
+        Example<User> userExample = Example.of(user);
+        return userRepository.findAll(userExample);
     }
 }
