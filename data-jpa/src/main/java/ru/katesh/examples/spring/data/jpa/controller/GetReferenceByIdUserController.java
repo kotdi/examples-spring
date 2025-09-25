@@ -27,8 +27,7 @@ public class GetReferenceByIdUserController {
      */
     @GetMapping("/{userId}")
     @Transactional
-    public void findAll(@PathVariable Long userId) {
-        System.out.println("Hello или привет");
+    public void getReferenceById(@PathVariable Long userId) {
         log.info("Делаем запрос getReferenceById c id = {}", userId);
         User user = userRepository.getReferenceById(userId);
         log.info("Получили ссылку на объект user c id = {}, теперь выведем все поля объекта", userId);
