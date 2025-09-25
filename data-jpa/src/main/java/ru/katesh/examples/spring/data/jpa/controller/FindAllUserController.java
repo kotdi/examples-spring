@@ -38,7 +38,7 @@ public class FindAllUserController {
     }
 
     /**
-     * Демонстрация работы метода findAll с пагинацией
+     * Демонстрация работы метода findAll с пагинацией. Нумерация страниц начинается с 0
      */
     @GetMapping("/pageable")
     public List<User> findAllWithPageable(@RequestParam Integer pageNumber, @RequestParam Integer pageSize) {

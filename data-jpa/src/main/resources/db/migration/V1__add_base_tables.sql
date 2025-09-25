@@ -1,4 +1,4 @@
---Создаем таблицу для пользователей
+--Создаем таблицу пользователей
 CREATE TABLE users (
     user_id             serial  not null,
     user_name           text    not null,
