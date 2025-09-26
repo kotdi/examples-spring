@@ -18,10 +18,4 @@ S saveAndFlush(S entity);
 
 List<S/> saveAllAndFlush(Iterable<S/> entities);
 
-void deleteAllInBatch(Iterable<T> entities);
-
-void deleteAllByIdInBatch(Iterable<ID> ids);
-
-void deleteAllInBatch();
-
 R findBy(Example<S/> example, Function<FluentQuery.FetchableFluentQuery<S/>, R> queryFunction);
