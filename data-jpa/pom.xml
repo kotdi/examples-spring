@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>ru.katesh</groupId>
-        <artifactId>examples-spring</artifactId>
+        <artifactId>examples-spring-features</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
