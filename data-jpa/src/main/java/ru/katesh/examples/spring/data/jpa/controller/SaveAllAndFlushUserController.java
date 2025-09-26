@@ -11,18 +11,18 @@ import ru.katesh.examples.spring.data.jpa.repository.UserRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/user/saveAll")
+@RequestMapping("/v1/user/saveAllAndFlush")
 @RequiredArgsConstructor
-public class SaveAllUserController {
+public class SaveAllAndFlushUserController {
 
     private final UserRepository userRepository;
 
     /**
-     * Метод saveAll сохраняет сущности в базу данных, вызывая для каждой в цикле метод save. Можно включить batching,
-     * но он не работает с INSERT, если у сущности GenerationType.IDENTITY, но работает с UPDATE
+     * Метод saveAllAndFlush используется, когда нужно сохранить пачку и тут же выгрузить в базу, а не ждать commit
+     * транзакции.
      */
     @PostMapping
-    public List<User> saveAll(@RequestBody List<User> users) {
-        return userRepository.saveAll(users);
+    public List<User> saveAllAndFlush(@RequestBody List<User> users) {
+        return userRepository.saveAllAndFlush(users);
     }
 }

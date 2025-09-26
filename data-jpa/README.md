@@ -9,13 +9,8 @@ ___
 
 ### 1) Чем отличается использование limit и offset от offset и fetch?
 
-___
-Осталось разобрать:
-
-void flush();
-
-S saveAndFlush(S entity);
-
-List<S/> saveAllAndFlush(Iterable<S/> entities);
-
-R findBy(Example<S/> example, Function<FluentQuery.FetchableFluentQuery<S/>, R> queryFunction);
+### 2) Что делает метод flush()?
+Persistence context (он же первый уровень кэша) хранит все сущности, с которыми мы работаем в текущей транзакции. Метод
+flush() заставляет Hibernate выгрузить все накопленные изменения в SQL. Все эти SQL-операции выполняются немедленно, но
+транзакция пока не коммитится, то есть изменения уже в БД, но не видны другим транзакциям до commit. Важно заметить, что
+flush выгружает всё, что накопилось в persistence context, а не только то, что ты явно сохранил перед вызовом метода.
