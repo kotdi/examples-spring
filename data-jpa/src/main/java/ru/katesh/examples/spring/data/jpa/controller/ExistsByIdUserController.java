@@ -15,8 +15,7 @@ public class ExistsByIdUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод existsById() используется для проверки существует ли сущность в базе данных с указанным идентификатором.
-     * Возвращает boolean
+     * Метод existsById проверяет, существует ли сущность в базе данных с указанным идентификатором. Возвращает boolean
      */
     @GetMapping("/{userId}")
     public boolean existsById(@PathVariable Long userId) {

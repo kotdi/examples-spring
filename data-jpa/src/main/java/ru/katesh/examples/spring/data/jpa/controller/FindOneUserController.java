@@ -10,28 +10,24 @@ import ru.katesh.examples.spring.data.jpa.entity.User;
 import ru.katesh.examples.spring.data.jpa.repository.UserRepository;
 
 @RestController
-@RequestMapping("/v1/user/count")
+@RequestMapping("/v1/user/findOne")
 @RequiredArgsConstructor
-public class CountUserController {
+public class FindOneUserController {
 
     private final UserRepository userRepository;
 
     /**
-     * Метод count подсчитывает количество записей в таблице
+     * Метод findOne возвращает запись, соответсвующую примеру в аргументе метода. Запись должна быть уникальной, иначе
+     * будет выброшен IncorrectResultSizeDataAccessException. При выполнении запроса просит вернуть 2 записи для
+     * проверки уникальности
      */
     @GetMapping
-    public Long count() {
-        return userRepository.count();
-    }
-
-    /**
-     * Метод count подсчитывает количество записей в таблице соответствующих примеру в аргументе example
-     */
-    @GetMapping("/example")
-    public Long countWithExample(@RequestParam String name) {
+    public User findOne(@RequestParam String name,
+                        @RequestParam String middleName) {
         User user = new User();
         user.setUserName(name);
+        user.setUserMiddleName(middleName);
         Example<User> userExample = Example.of(user);
-        return userRepository.count(userExample);
+        return userRepository.findOne(userExample).orElseThrow();
     }
 }

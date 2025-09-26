@@ -30,7 +30,7 @@ public class FindAllUserController {
     }
 
     /**
-     * Демонстрация работы метода findAll с сортировкой, в качестве properties указываются поля класса
+     * Демонстрация работы метода findAll с сортировкой, в качестве properties в методе Sort.by указываются поля класса
      */
     @GetMapping("/sort")
     public List<User> findAllWithSort(@RequestParam String field) {
@@ -56,5 +56,36 @@ public class FindAllUserController {
         user.setUserMiddleName(middleName);
         Example<User> userExample = Example.of(user);
         return userRepository.findAll(userExample);
+    }
+
+    /**
+     * Демонстрация работы метода findAll с поиском по примеру и сортировкой. В качестве примера используется обёртка
+     * вокруг «примера объекта», где не-null поля используются как условия фильтрации
+     */
+    @GetMapping("/example/sort")
+    public List<User> findAllWithExampleAndSort(@RequestParam String name,
+                                                @RequestParam String middleName,
+                                                @RequestParam String field){
+        User user = new User();
+        user.setUserName(name);
+        user.setUserMiddleName(middleName);
+        Example<User> userExample = Example.of(user);
+        return userRepository.findAll(userExample, Sort.by(Sort.Direction.DESC, field));
+    }
+
+    /**
+     * Демонстрация работы метода findAll с поиском по примеру и пагинацией. В качестве примера используется обёртка
+     * вокруг «примера объекта», где не-null поля используются как условия фильтрации
+     */
+    @GetMapping("/example/pageable")
+    public List<User> findAllWithExampleAndPageable(@RequestParam String name,
+                                                    @RequestParam String middleName,
+                                                    @RequestParam Integer pageNumber,
+                                                    @RequestParam Integer pageSize){
+        User user = new User();
+        user.setUserName(name);
+        user.setUserMiddleName(middleName);
+        Example<User> userExample = Example.of(user);
+        return userRepository.findAll(userExample, PageRequest.of(pageNumber, pageSize)).getContent();
     }
 }

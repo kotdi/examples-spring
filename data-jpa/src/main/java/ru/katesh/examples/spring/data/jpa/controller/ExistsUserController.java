@@ -10,28 +10,22 @@ import ru.katesh.examples.spring.data.jpa.entity.User;
 import ru.katesh.examples.spring.data.jpa.repository.UserRepository;
 
 @RestController
-@RequestMapping("/v1/user/count")
+@RequestMapping("/v1/user/exists")
 @RequiredArgsConstructor
-public class CountUserController {
+public class ExistsUserController {
 
     private final UserRepository userRepository;
 
     /**
-     * Метод count подсчитывает количество записей в таблице
+     * Метод exists проверяет, существует ли сущность в базе данных с указанным примером. Возвращает boolean
      */
     @GetMapping
-    public Long count() {
-        return userRepository.count();
-    }
-
-    /**
-     * Метод count подсчитывает количество записей в таблице соответствующих примеру в аргументе example
-     */
-    @GetMapping("/example")
-    public Long countWithExample(@RequestParam String name) {
+    public boolean exists(@RequestParam String name,
+                          @RequestParam String middleName) {
         User user = new User();
         user.setUserName(name);
+        user.setUserMiddleName(middleName);
         Example<User> userExample = Example.of(user);
-        return userRepository.count(userExample);
+        return userRepository.exists(userExample);
     }
 }
