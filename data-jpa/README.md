@@ -24,10 +24,4 @@ void deleteAllByIdInBatch(Iterable<ID> ids);
 
 void deleteAllInBatch();
 
-void delete(T entity);
-
-void deleteAll(Iterable<? extends T> entities);
-
-void deleteAll();
-
 R findBy(Example<S/> example, Function<FluentQuery.FetchableFluentQuery<S/>, R> queryFunction);
