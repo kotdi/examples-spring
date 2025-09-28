@@ -1,4 +1,4 @@
-package ru.katesh.examples.spring.data.jpa.controller;
+package ru.kot1a.examples.spring.data.jpa.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Example;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.katesh.examples.spring.data.jpa.entity.User;
-import ru.katesh.examples.spring.data.jpa.repository.UserRepository;
+import ru.kot1a.examples.spring.data.jpa.entity.User;
+import ru.kot1a.examples.spring.data.jpa.repository.UserRepository;
 
 import java.util.List;
 

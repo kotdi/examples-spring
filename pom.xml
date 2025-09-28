@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>ru.katesh</groupId>
+    <groupId>ru.kot1a</groupId>
     <artifactId>examples-spring-features</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>

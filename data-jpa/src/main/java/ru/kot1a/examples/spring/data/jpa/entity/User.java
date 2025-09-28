@@ -1,4 +1,4 @@
-package ru.katesh.examples.spring.data.jpa.entity;
+package ru.kot1a.examples.spring.data.jpa.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package ru.katesh.examples.spring.data.jpa;
+package ru.kot1a.examples.spring.data.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
