@@ -25,7 +25,7 @@ public class FindByUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод findBy используя example с ExampleMatcher и гибкую настройку через fluentQuery динамически строит запрос
+     * Метод findBy используя example с ExampleMatcher и гибкую настройку через fluentQuery динамически строит запрос.
      */
     @GetMapping
     public List<User> findBy(@RequestParam String name,

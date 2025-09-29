@@ -17,7 +17,7 @@ public class CountUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод count подсчитывает количество записей в таблице
+     * Метод count подсчитывает количество записей в таблице.
      */
     @GetMapping
     public Long count() {
@@ -25,7 +25,7 @@ public class CountUserController {
     }
 
     /**
-     * Метод count подсчитывает количество записей в таблице соответствующих примеру в аргументе example
+     * Метод count подсчитывает количество записей в таблице соответствующих примеру в аргументе example.
      */
     @GetMapping("/example")
     public Long countWithExample(@RequestParam String name) {

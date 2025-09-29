@@ -20,7 +20,7 @@ public class FindAllByIdUserController {
     /**
      * Метод findAllById в Spring Data JPA используется для поиска нескольких сущностей по их идентификаторам. Он
      * принимает на вход коллекцию идентификаторов (например, List, Set) и возвращает список сущностей, соответствующих
-     * этим идентификаторам
+     * этим идентификаторам.
      */
     @PostMapping
     public List<User> findAllById(@RequestBody List<Long> ids) {

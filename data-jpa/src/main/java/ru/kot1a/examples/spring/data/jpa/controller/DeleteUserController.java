@@ -16,7 +16,7 @@ public class DeleteUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод delete
+     * Метод delete удаляющий по переданному объекту.
      */
     @DeleteMapping("/{userId}")
     public void delete(@PathVariable Long userId) {

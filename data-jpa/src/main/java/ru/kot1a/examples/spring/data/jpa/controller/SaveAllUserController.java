@@ -19,7 +19,7 @@ public class SaveAllUserController {
 
     /**
      * Метод saveAll сохраняет сущности в базу данных, вызывая для каждой в цикле метод save. Можно включить batching,
-     * но он не работает с INSERT, если у сущности GenerationType.IDENTITY, но работает с UPDATE
+     * но он не работает с INSERT, если у сущности GenerationType.IDENTITY, но работает с UPDATE.
      */
     @PostMapping
     public List<User> saveAll(@RequestBody List<User> users) {

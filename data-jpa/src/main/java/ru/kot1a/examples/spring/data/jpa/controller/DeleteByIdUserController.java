@@ -15,7 +15,7 @@ public class DeleteByIdUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод deleteById в Spring Data JPA используется для удаления сущности из базы данных по её идентификатору
+     * Метод deleteById в Spring Data JPA используется для удаления сущности из базы данных по её идентификатору.
      */
     @DeleteMapping("/{userId}")
     public void deleteById(@PathVariable Long userId) {

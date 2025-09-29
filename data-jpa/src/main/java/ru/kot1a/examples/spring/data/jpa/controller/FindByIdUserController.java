@@ -17,7 +17,7 @@ public class FindByIdUserController {
 
     /**
      * Метод findById - это стандартный метод репозитория, который позволяет найти сущность в базе данных по её
-     * идентификатору. Возвращает объект типа Optional
+     * идентификатору. Возвращает объект типа Optional.
      */
     @GetMapping("/{userId}")
     public User findById(@PathVariable Long userId) {

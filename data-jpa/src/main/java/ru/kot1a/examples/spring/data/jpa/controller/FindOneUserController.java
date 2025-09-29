@@ -19,7 +19,7 @@ public class FindOneUserController {
     /**
      * Метод findOne возвращает запись, соответсвующую примеру в аргументе метода. Запись должна быть уникальной, иначе
      * будет выброшен IncorrectResultSizeDataAccessException. При выполнении запроса просит вернуть 2 записи для
-     * проверки уникальности
+     * проверки уникальности.
      */
     @GetMapping
     public User findOne(@RequestParam String name,

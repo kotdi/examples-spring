@@ -17,7 +17,7 @@ public class SaveAndFlushUserController {
 
     /**
      * Метод saveAndFlush заставляет Hibernate синхронизировать persistence context с базой. В этот момент Hibernate
-     * берёт все накопленные изменения (INSERT, UPDATE, DELETE) и исполняет SQL
+     * берёт все накопленные изменения (INSERT, UPDATE, DELETE) и исполняет SQL.
      */
     @PostMapping
     public User saveAndFlush(@RequestBody User user) {

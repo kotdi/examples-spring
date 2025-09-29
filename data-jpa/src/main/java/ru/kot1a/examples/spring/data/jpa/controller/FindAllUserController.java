@@ -22,7 +22,7 @@ public class FindAllUserController {
 
     /**
      * Метод finaAll возвращает все записи таблицы. Опасен на больших таблицах, вытаскивает все строки, например на
-     * таблице с 10 млн строк будет OutOfMemoryError или очень долгий запрос
+     * таблице с 10 млн строк будет OutOfMemoryError или очень долгий запрос.
      */
     @GetMapping
     public List<User> findAll() {
@@ -30,7 +30,7 @@ public class FindAllUserController {
     }
 
     /**
-     * Демонстрация работы метода findAll с сортировкой, в качестве properties в методе Sort.by указываются поля класса
+     * Демонстрация работы метода findAll с сортировкой, в качестве properties в методе Sort.by указываются поля класса.
      */
     @GetMapping("/sort")
     public List<User> findAllWithSort(@RequestParam String field) {
@@ -38,7 +38,7 @@ public class FindAllUserController {
     }
 
     /**
-     * Демонстрация работы метода findAll с пагинацией. Нумерация страниц начинается с 0
+     * Демонстрация работы метода findAll с пагинацией. Нумерация страниц начинается с 0.
      */
     @GetMapping("/pageable")
     public List<User> findAllWithPageable(@RequestParam Integer pageNumber, @RequestParam Integer pageSize) {
@@ -47,7 +47,7 @@ public class FindAllUserController {
 
     /**
      * Демонстрация работы метода findAll с поиском по примеру. В качестве примера используется обёртка вокруг «примера
-     * объекта», где не-null поля используются как условия фильтрации
+     * объекта», где не-null поля используются как условия фильтрации.
      */
     @GetMapping("/example")
     public List<User> findAllWithExample(@RequestParam String name, @RequestParam String middleName) {
@@ -60,7 +60,7 @@ public class FindAllUserController {
 
     /**
      * Демонстрация работы метода findAll с поиском по примеру и сортировкой. В качестве примера используется обёртка
-     * вокруг «примера объекта», где не-null поля используются как условия фильтрации
+     * вокруг «примера объекта», где не-null поля используются как условия фильтрации.
      */
     @GetMapping("/example/sort")
     public List<User> findAllWithExampleAndSort(@RequestParam String name,
@@ -75,7 +75,7 @@ public class FindAllUserController {
 
     /**
      * Демонстрация работы метода findAll с поиском по примеру и пагинацией. В качестве примера используется обёртка
-     * вокруг «примера объекта», где не-null поля используются как условия фильтрации
+     * вокруг «примера объекта», где не-null поля используются как условия фильтрации.
      */
     @GetMapping("/example/pageable")
     public List<User> findAllWithExampleAndPageable(@RequestParam String name,

@@ -20,7 +20,7 @@ public class DeleteAllByIdUserController {
      * Метод deleteAllById в Spring Data JPA используется для удаления нескольких сущностей из базы данных по их
      * идентификаторам. Он принимает на вход коллекцию идентификаторов (например, List<Long>, Set<Integer>) и удаляет
      * все сущности, соответствующие этим id. Если какой-то id не существует, он просто игнорируется. Важное замечание,
-     * ORM генерит много отдельных DELETE запросов
+     * ORM генерит много отдельных DELETE запросов.
      */
     @DeleteMapping
     public void deleteAllById(@RequestBody List<Long> ids) {

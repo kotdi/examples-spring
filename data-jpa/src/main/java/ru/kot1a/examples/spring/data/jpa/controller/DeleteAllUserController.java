@@ -18,7 +18,7 @@ public class DeleteAllUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод deleteAll удаляет все записи, применяя к каждой отдельный DELETE запрос
+     * Метод deleteAll удаляет все записи, применяя к каждой отдельный DELETE запрос.
      */
     @DeleteMapping
     public void deleteAll() {
@@ -26,7 +26,7 @@ public class DeleteAllUserController {
     }
 
     /**
-     * Метод deleteAll удаляет переданные ему сущности
+     * Метод deleteAll удаляет переданные ему сущности.
      */
     @DeleteMapping("/ids")
     public void deleteAllFromCollection(@RequestBody List<Long> ids) {

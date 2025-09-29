@@ -18,7 +18,7 @@ public class DeleteAllInBatchUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод deleteAllInBatch удаляет все записи одним запросом
+     * Метод deleteAllInBatch удаляет все записи одним запросом.
      */
     @DeleteMapping
     public void deleteAll() {
@@ -26,7 +26,7 @@ public class DeleteAllInBatchUserController {
     }
 
     /**
-     * Метод deleteAllInBatch удаляет переданные ему сущности одним запросом через IN
+     * Метод deleteAllInBatch удаляет переданные ему сущности одним запросом через IN.
      */
     @DeleteMapping("/ids")
     public void deleteAllFromCollection(@RequestBody List<Long> ids) {

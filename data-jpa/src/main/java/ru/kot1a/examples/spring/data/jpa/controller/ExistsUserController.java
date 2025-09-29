@@ -17,7 +17,7 @@ public class ExistsUserController {
     private final UserRepository userRepository;
 
     /**
-     * Метод exists проверяет, существует ли сущность в базе данных с указанным примером. Возвращает boolean
+     * Метод exists проверяет, существует ли сущность в базе данных с указанным примером. Возвращает boolean.
      */
     @GetMapping
     public boolean exists(@RequestParam String name,
